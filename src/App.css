@@ -1,0 +1,202 @@
+.header {
+  position: fixed;              /* stays on top when scrolling */
+  top: 0;
+  width: 100%;
+  background-color: #00000000; /* transparent white for elegance */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 15px 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 1);  /* subtle drop shadow */
+  z-index: 1000;               /* ensures it stays above other content */
+  backdrop-filter: blur(10px); /* slight glass effect */
+}
+
+.logo-button {
+  background: none;
+  border:none;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  color: #ffffff;
+  cursor:pointer;
+}
+
+.nav-links{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 60px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #bfa14b; /* gold hover */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Playfair Display', serif;
+  /*font-family: 'Roboto', serif;*/
+  background-color: rgb(0, 0, 0);
+  /*background-color: #bfa14b;*/
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  width: 100%;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero {
+  margin-top: 65px; /* adjusts content below fixed header */
+  color: rgb(1, 1, 1);
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1, .hero h2 {
+  font-size: 50px; 
+  position: relative;
+  top: -150px;
+  color: white;
+  background-color: black;
+  border-radius: 12px;
+}
+
+.gold-button{
+  background-color: #bfa14b; /* gold */
+  color: black;
+  border:black 2px solid;
+  padding: 12px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+/* "Tab" focus styles for accessibility */
+.nav-links a:focus,
+.gold-button:focus,
+.email-link:focus {
+  outline: 2px solid #bfa14b;
+  outline-offset: 3px;
+}
+
+.gold-button:hover{
+    background-color: #a1873f;
+}
+
+.gold-button:active{
+    background-color: #bfa14b;
+}
+
+/* ==== Section Styles ==== */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #bfa14b;
+}
+
+.section p {
+  max-width: 70%;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.section ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  max-width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.section ul li {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.musician-list {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.musician {
+  background: rgba(17, 17, 17, 0.9);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 150px;
+}
+
+.musician img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+  .nav-links{
+    position: static;
+    transform: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    gap: 7px;
+  }
+
+  .logo-button{
+    font-size: 18px;
+  }
+  
+    section {
+    padding: 60px 10px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .section p, 
+  .section ul {
+    max-width: 100%;
+    padding: 0 15px; 
+  }
+}
